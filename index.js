@@ -20,7 +20,7 @@ inquirer
     },
     {    
         type: 'input',
-        message: 'What is the usage information?',
+        message: 'What is the usage information you want to include?',
         name:  'usage',
     },  
     {    
@@ -55,22 +55,10 @@ inquirer
     .then((answers) => {
        // const filename = '${answers.name.toLowerCase().split(' ').join('')}.json';
       //  const  - revisit this on pg 74 of notes
-        answers.input === answers.title,
-        answers.input === answers.description,
-        answers.input === answers.usage,
-        answers.input === answers.contributions,
-        answers.input === answers.tests,
-        answers.input === answers.license,
-        answers.input === answers.username,
-        answers.input === answers.email
-          //  console.log(answers);       
+        console.log(answers);
+        const inputResponses = deployReadME(answers);
 
-    // TODO: Create a function to write README file - figure out 
-    //to write to questionns section for some of the entries githb un,
-    //email to ques, with instructions on additional ques. text
-    // when click on links in TOC, taken to sections of RM file - create
-    //string file for writeFile
-fs.writeFile("log.txt", r,  (err) =>
+   fs.writeFile("README.MD", inputResponses,  (err) =>
     err ? console.log(err) : console.log ("README file created successfully!") 
 
 )    
