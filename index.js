@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [];
@@ -16,6 +17,7 @@ inquirer
     {
         type: 'input',
         message: 'What is the project description?',
+        
         name:  'description',
     },
     {    
@@ -53,10 +55,9 @@ inquirer
 
     ])
     .then((answers) => {
-       // const filename = '${answers.name.toLowerCase().split(' ').join('')}.json';
-      //  const  - revisit this on pg 74 of notes
+     //  const  - revisit this on pg 74 of notes
         console.log(answers);
-        const inputResponses = deployReadME(answers);
+        const inputResponses = generateMarkdown(answers);
 
    fs.writeFile("README.MD", inputResponses,  (err) =>
     err ? console.log(err) : console.log ("README file created successfully!") 
