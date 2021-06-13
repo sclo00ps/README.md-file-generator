@@ -1,10 +1,11 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown.js');
+//const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [];
+//const generateReadMe = (answers) =>
 
 inquirer 
 .prompt ([
@@ -13,7 +14,6 @@ inquirer
         message: 'What is your project title?',
         name:  'title',
     },
-
     {
         type: 'input',
         message: 'What is the project description?',
@@ -31,43 +31,38 @@ inquirer
         name:  'contributions',
     },
     {
-        type: 'input',
+        type: 'list',
         message: 'What are the test instructions?',
         name:  'tests',
     },
     {
         type: 'list',
-        message: 'What is your license type?',
         name:  'license',
+        message: 'What is your license type?',
         choices: ["MIT", "Apache", "GPL"]
     },
-
     {
         type: 'input',
-        message: 'What is your Github username?',
         name:  'username',
+        message: 'What is your Github username?',
     },
     {
         type: 'input',
-        message: 'What is your email address?',
         name:  'email',
+        message: 'What is your email address?',
     },
 
     ])
     .then((answers) => {
      //  const  - revisit this on pg 74 of notes
         console.log(answers);
-        const inputResponses = generateMarkdown(answers);
+        const readmePageContent = generateReadMe(answers);
 
-   fs.writeFile("README.MD", inputResponses,  (err) =>
-    err ? console.log(err) : console.log ("README file created successfully!") 
+   fs.writeFile('README.md', readmePageContent,  (err) =>
+    err ? console.log(err) : console.log ('README.md file created successfully!') 
 
 )    
 })
-
-
-
-
    
        
 // TODO: Create a function to initialize app
