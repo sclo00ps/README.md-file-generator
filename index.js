@@ -72,7 +72,7 @@ inquirer
    //         return
 
     //   title,
-        description,
+    //    description,
     //    usage,
     //    contributions,
     //    tests,
@@ -82,16 +82,11 @@ inquirer
    // return
   //  })=>{
     //readme format template    
-    const readmePageContent ='# ${title}
-
-    * [Description]
-    ## Description
-    ${Description}
-    ##Table of Contents (Optional)
-    *[Installation]()
-    .then((answers) => {
+  //const readmePageContent ='# ${title}
+  
+  .then((answers) => {
         return
-    # ${answers.title}
+     ' # ${title}
 
     # Table of Contents
 
@@ -105,38 +100,39 @@ inquirer
      - [Questions](#questions)
 
     ## Description
-    ![License](https://img.shields.io/badge/License-${answers.license}-blue.svg "License Badge)
+    ![License](https://img.shields.io/badge/License-${this.license}-blue.svg "License Badge)
 
-        '${description}'
+     ${description}
 
     ## Installation:
-     '${installation}'
+     ${installation}
 
      ## Usage:
-     '${usage}'
+     ${usage}
 
      ## Contribution:
-     '${contributions}'
+     ${contributions}
 
      ## Tests:
-     '${installation}'
+     ${installation}
 
      ## Credits:
-     '${installation}'
+     ${installation}
      
      ## License:
-     '${license}'
+     ${license}
+        For additional licensing information, please click the link displayed below:
+
+     [License](https://img.shields.io/badge/License-'${license}'-blue.svg "License Badge)
 
      ## Questions:
-     '${questions}'
+        The link below will take you to my Github Profile for additional details:
 
+        - [username](https://github.com/${username})
 
-
-    
-
-    
-     //  const  - revisit this on pg 74 of notes
-       console.log(answers) ;
+        If there are any additional questions, plse contact me at:  ${email}.
+       
+        console.log(answers) ;
         const readmePageContent = generateReadMe(answers);
 
    fs.writeFile('README.md', readmePageContent,  (err) =>
