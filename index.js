@@ -8,69 +8,69 @@ const fs = require('fs');
 const questions = [];
 const generateReadMe = (answers) => {
 
-return inquirer 
-.prompt ([
-    {
-        type: 'input',
-        message: 'What is your project title?',
-        name:  'title',
-     //   validate: (value)=>{ if(value){return true} else {return 'a value must be entered to continue'}}
-    },
-    {
-        type: 'input',
-        message: 'What is the project description?',
-        name:  'description',
-    //    validate: (value)=>{ if(value){return true} else {return 'a value must be entered to continue'}}
-    },
-    {
-        type: 'input',
-        message: 'What is required to install the application?, enter None if nothing required)',
-        name:  'installation',
-    //    validate: (value)=>{ if(value){return true} else {return 'a value must be entered to continue'}}
-    },
-    {    
-        type: 'input',
-        message: 'What is the usage information you want to include?',
-        name:  'usage',
-    //    validate: (value)=>{ if(value){return true} else {return 'a value must be entered to continue'}}
-    },  
-    {    
-        type: 'input',
-        message: 'What are the contribution guidelines?',
-        name:  'contributions',
-    //    validate: (value)=>{ if(value){return true} else {return 'a value must be entered to continue'}}
-    },
-    {
-        type: 'list',
-        message: 'What are the test instructions?',
-        name:  'tests',
-    //    validate: (value)=>{ if(value){return true} else {return 'a value must be entered to continue'}}
-    },
-    {
-        type: 'list',
-        name:  'license',
-        message: 'What is your license type?',
-        choices: ["MIT", "Apache", "GPL"]
-    //    validate: (value)=>{ if(value){return true} else {return 'a value must be entered to continue'}}
-    },
-    {
-        type: 'input',
-        name:  'username',
-        message: 'What is your Github username?',
-    //    validate: (value)=>{ if(value){return true} else {return 'a value must be entered to continue'}}
-    },
-    {
-        type: 'input',
-        name:  'Email',
-        message: 'What is your email address?',
-    //    validate: (value)=>{ if(value){return true} else {return 'a value must be entered to continue'}}
-    },
+    return inquirer
+        .prompt([
+            {
+                type: 'input',
+                message: 'What is your project title?',
+                name: 'title',
+                validate: (value) => { if (value) { return true } else { return 'a value must be entered to continue' } }
+            },
+            {
+                type: 'input',
+                message: 'What is the project description?',
+                name: 'description',
+                validate: (value) => { if (value) { return true } else { return 'a value must be entered to continue' } }
+            },
+            {
+                type: 'input',
+                message: 'What is required to install the application?, enter None if nothing required)',
+                name: 'installation',
+                //    validate: (value)=>{ if(value){return true} else {return 'a value must be entered to continue'}}
+            },
+            {
+                type: 'input',
+                message: 'What is the usage information you want to include?',
+                name: 'usage',
+                validate: (value) => { if (value) { return true } else { return 'a value must be entered to continue' } }
+            },
+            {
+                type: 'input',
+                message: 'What are the contribution guidelines?',
+                name: 'contributions',
+                validate: (value) => { if (value) { return true } else { return 'a value must be entered to continue' } }
+            },
+            {
+                type: 'input',
+                message: 'What are the test instructions?',
+                name: 'tests',
+                validate: (value) => { if (value) { return true } else { return 'a value must be entered to continue' } }
+            },
+            {
+                type: 'list',
+                name: 'license',
+                message: 'What is your license type?',
+                choices: ["MIT", "Apache", "GPL"],
+                validate: (value) => { if (value) { return true } else { return 'a value must be entered to continue' } }
+            },
+            {
+                type: 'input',
+                name: 'username',
+                message: 'What is your Github username?',
+                validate: (value) => { if (value) { return true } else { return 'a value must be entered to continue' } }
+            },
+            {
+                type: 'input',
+                name: 'Email',
+                message: 'What is your email address?',
+                validate: (value) => { if (value) { return true } else { return 'a value must be entered to continue' } }
+            },
 
-    ])
-     
-  .then((answers) => {
-   
-    ' # ${title}
+        ])
+
+        .then((answers) => {
+
+         const readmePageContent = `# ${answers.title}
 
     # Table of Contents
 
@@ -84,51 +84,52 @@ return inquirer
      - [Questions](#questions)
 
     ## Description
-    ![License](https://img.shields.io/badge/License-${this.license}-blue.svg "License Badge)
+    ![License](https://img.shields.io/badge/License-${answers.license}-blue.svg "License Badge)
 
-     ${description}
+     ${answers.description}
 
     ## Installation:
-     ${installation}
+     ${answers.installation}
 
      ## Usage:
-     ${usage}
+     ${answers.usage}
 
      ## Contribution:
-     ${contributions}
+     ${answers.contributions}
 
      ## Tests:
-     ${installation}
+     ${answers.installation}
 
      ## Credits:
-     ${installation}
+     ${answers.installation}
      
      ## License:
-     ${license}
+     ${answers.license}
         For additional licensing information, please click the link displayed below:
 
-     [License](https://img.shields.io/badge/License-'${license}'-blue.svg "License Badge)
+     [License](https://img.shields.io/badge/License-'${answers.license}'-blue.svg "License Badge)
 
      ## Questions:
         The link below will take you to my Github Profile for additional details:
 
-        - [username](https://github.com/${username})
+        - [username](https://github.com/${answers.username})
 
-        If there are any additional questions, plse contact me at:  ${email}.
-       
-        console.log(answers) ;
-        const readmePageContent = generateReadMe(answers);
+        If there are any additional questions, plse contact me at:  ${answers.email}.
+    `
+            console.log(answers);
+         //   const readmePageContent = generateReadMe(answers);
 
-   fs.writeFile('README.md', readmePageContent,  (err) =>
-    err ? console.log(err) : console.log ('README.md file created successfully!') 
 
-)    
-})
-}
-   
-       
-// TODO: Create a function to initialize app
-function init() {}
+            fs.writeFile('README.md', readmePageContent, (err) =>
+                err ? console.log(err) : console.log('README.md file created successfully!')
 
-// Function call to initialize app
-init();
+            )
+        })
+
+    }
+
+    // TODO: Create a function to initialize app
+    function init() {generateReadMe()} 
+
+    // Function call to initialize app
+    init();
