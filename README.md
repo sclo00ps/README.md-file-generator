@@ -1,11 +1,11 @@
 # [object Object]
 
     # Title 
-    pm
+    b2b
 
     # Table of Contents
 
-     - [Description] (#description)
+     - [Description](#description)
      - [Installation](#installation)
      - [Usage](#usage)
      - [Contribution](#contributions)
@@ -17,7 +17,7 @@
     ## Description
     ![License]<(https://img.shields.io/badge/License-MIT>-blue.svg "License Badge)
 
-     qa
+     dental
 
     ## Installation:
      none
@@ -29,7 +29,7 @@
      none
 
      ## Tests:
-     unit and qa
+     unit
 
      ## Credits:
      undefined
@@ -38,13 +38,15 @@
      MIT
         For additional licensing information, please click the link displayed below:
 
-        [License]: <https://img.shields.io/badge/License-MIT-blue.svg> "License Badge"
+        <https://img.shields.io/badge/License-MIT-blue.svg> "License Badge"
 
         
      ## Questions:
         The link below will take you to my Github Profile for additional details:
 
-      - [Username]: <https://github.com/sc>
+       <https://github.com/sc>
     
-        If there are any additional questions, plse contact me at:  <undefined>.
+        If there are any additional questions, plse contact me at:  
+        <l@gmail.com>.
+
     

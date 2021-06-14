@@ -87,7 +87,7 @@ const generateReadMe = (answers) => {
      - [Questions](#questions)
 
     ## Description
-    ![License]<(https://img.shields.io/badge/License-${answers.license}>-blue.svg "License Badge)
+     [![License]<(https://img.shields.io/badge/License-${answers.license}>-blue.svg "License Badge)]
 
      ${answers.description}
 
