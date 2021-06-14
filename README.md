@@ -1,7 +1,7 @@
 # [object Object]
 
     # Title 
-    pm
+    readme.md file generator
 
     # Table of Contents
 
@@ -15,38 +15,38 @@
      - [Questions](#questions)
 
     ## Description
-     [![License](https://img.shields.io/badge/License-Apache-blue.svg "License Badge)]
+     [![License](https://img.shields.io/badge/License-MIT-blue.svg "License Badge)]
 
-     u
+     automation of readme.md file
 
     ## Installation:
-     none
+     inquirer, fs, index.js pkg.json and pkg-lock.json, .gitignore files
 
      ## Usage:
-     fo
+     development and production
 
      ## Contribution:
-     no
+     none
 
      ## Tests:
-     qa
+     echo test
 
      ## Credits:
      undefined
      
      ## License:
-     Apache
+     MIT
         For additional licensing information, please click the link displayed below:
 
-        <https://img.shields.io/badge/License-Apache-blue.svg> "License Badge"
+        <https://img.shields.io/badge/License-MIT-blue.svg> "License Badge"
 
         
      ## Questions:
         The link below will take you to my Github Profile for additional details:
 
-       <https://github.com/l>
+       <https://github.com/sclo00ps>
     
         If there are any additional questions, plse contact me at:  
-        <l>.
+        <louginescott@gmail.com>.
 
     
