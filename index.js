@@ -24,7 +24,7 @@ const generateReadMe = (answers) => {
             },
             {
                 type: 'input',
-                message: 'What is required to install the application?, enter None if nothing required)',
+                message: 'What is required to install the application, enter None if nothing required.',
                 name: 'installation',
                 validate: (value)=>{ if(value){return true} else {return 'a value must be entered to continue'}}
             },
