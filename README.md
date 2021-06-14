@@ -1,7 +1,7 @@
 # [object Object]
 
     # Title 
-    readme.md file generator
+    Readme.md file generator
 
     # Table of Contents
 
@@ -17,19 +17,19 @@
     ## Description
      [![License](https://img.shields.io/badge/License-MIT-blue.svg "License Badge)]
 
-     automation of readme.md file
+     automation of Readme.md file
 
     ## Installation:
-     inquirer, fs, index.js pkg.json and pkg-lock.json, .gitignore files
+     index.js, 2 json files, inquirer and fs packages
 
      ## Usage:
-     development and production
+     none
 
      ## Contribution:
      none
 
      ## Tests:
-     echo test
+     echp test suite is in package.json file
 
      ## Credits:
      undefined

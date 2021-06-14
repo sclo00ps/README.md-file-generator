@@ -47,6 +47,11 @@ const generateReadMe = (answers) => {
                 validate: (value) => { if (value) { return true } else { return 'a value must be entered to continue' } }
             },
             {
+                type: 'input',
+                name: 'credits',
+                message: 'Are there any credits for this project?',
+                validate: (value) => { if (value) { return true } else { return 'a value must be entered to continue' } }
+            {
                 type: 'list',
                 name: 'license',
                 message: 'What is your license type?',
