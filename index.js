@@ -51,6 +51,7 @@ const generateReadMe = (answers) => {
                 name: 'credits',
                 message: 'Are there any credits for this project?',
                 validate: (value) => { if (value) { return true } else { return 'a value must be entered to continue' } }
+            },
             {
                 type: 'list',
                 name: 'license',
