@@ -26,7 +26,7 @@ const generateReadMe = (answers) => {
                 type: 'input',
                 message: 'What is required to install the application?, enter None if nothing required)',
                 name: 'installation',
-                //    validate: (value)=>{ if(value){return true} else {return 'a value must be entered to continue'}}
+                validate: (value)=>{ if(value){return true} else {return 'a value must be entered to continue'}}
             },
             {
                 type: 'input',
@@ -61,7 +61,7 @@ const generateReadMe = (answers) => {
             },
             {
                 type: 'input',
-                name: 'Email',
+                name: 'email',
                 message: 'What is your email address?',
                 validate: (value) => { if (value) { return true } else { return 'a value must be entered to continue' } }
             },
@@ -70,7 +70,10 @@ const generateReadMe = (answers) => {
 
         .then((answers) => {
 
-         const readmePageContent = `# ${answers.title}
+         const readmePageContent = `# ${answers}
+
+    # Title 
+    ${answers.title}
 
     # Table of Contents
 
@@ -84,7 +87,7 @@ const generateReadMe = (answers) => {
      - [Questions](#questions)
 
     ## Description
-    ![License](https://img.shields.io/badge/License-${answers.license}-blue.svg "License Badge)
+    ![License]<(https://img.shields.io/badge/License-${answers.license}>-blue.svg "License Badge)
 
      ${answers.description}
 
@@ -98,23 +101,26 @@ const generateReadMe = (answers) => {
      ${answers.contributions}
 
      ## Tests:
-     ${answers.installation}
+     ${answers.tests}
 
      ## Credits:
-     ${answers.installation}
+     ${answers.credits}
      
      ## License:
      ${answers.license}
         For additional licensing information, please click the link displayed below:
 
-     [License](https://img.shields.io/badge/License-'${answers.license}'-blue.svg "License Badge)
+        <https://img.shields.io/badge/License-${answers.license}-blue.svg> "License Badge"
 
+        
      ## Questions:
         The link below will take you to my Github Profile for additional details:
 
-        - [username](https://github.com/${answers.username})
+       <https://github.com/${answers.username}>
+    
+        If there are any additional questions, plse contact me at:  
+        <${answers.email}>.
 
-        If there are any additional questions, plse contact me at:  ${answers.email}.
     `
             console.log(answers);
          //   const readmePageContent = generateReadMe(answers);
